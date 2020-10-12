@@ -1,14 +1,12 @@
-
 class ParkingGarage():
     def __init__(self,tickets,parkingSpaces,currentTickets):
         self.tickets = tickets
         self.parkingSpaces = parkingSpaces
         self.currentTickets = currentTickets
     def enteringGarage(self):
-        lok = len(list(self.currentTickets.keys()))
-        if lok == 10:
+        if self.tickets == []:
             print("Garage full")
-        elif lok != 10:
+        elif self.tickets !=[]:
             poped = self.tickets.pop()
             print(f"Welcome to our Garage.  Here's your ticket #: {poped}")
             self.currentTickets[poped] = ""
@@ -32,8 +30,7 @@ class ParkingGarage():
                     print("That's fine.  But you're now stuck in the garage. Get comfortable")
                     break
                 elif currentTicket != exitTicketNumber:
-                    print("Sorry, we could not find that ticket number")
-                     
+                    print("Sorry, we could not find that ticket number")                     
 parking = ParkingGarage([1,2,3,4,5,6,7,8,9,10],[1,2,3,4,5,6,7,8,9,10],{})  #INSTANTIATING here
 def run():
     while True:
